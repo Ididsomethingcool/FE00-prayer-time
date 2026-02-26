@@ -11,3 +11,13 @@
     </div>
   </div>
 </div>
+
+<footer *ngIf="!loading && timings">
+  <div class="prayer-times">
+    <span>Fajr: {{ timings.Fajr }}</span>
+    <span>Dhuhr: {{ timings.Dhuhr }}</span>
+    <span>Asr: {{ timings.Asr }}</span>
+    <span>Maghrib: {{ timings.Maghrib }}</span>
+    <span>Isha: {{ timings.Isha }}</span>
+  </div>
+</footer>
