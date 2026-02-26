@@ -8,7 +8,7 @@ import { Timings } from '../models/timings';
 })
 export class PrayerService {
   private http = inject(HttpClient);
-  private backendUrl = 'http://localhost:8080/api';
+  private backendUrl = 'https://be00-prayer-time-service-production.up.railway.app/api';
 
   getTodayTimings(city: string = 'Toronto', country: string = 'Canada'): Observable<Timings> {
     return this.http.get<Timings>(`${this.backendUrl}/today`, {
