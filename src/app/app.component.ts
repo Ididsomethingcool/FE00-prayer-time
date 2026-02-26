@@ -151,7 +151,7 @@ export class AppComponent implements OnInit, OnDestroy {
         return '#6bff4d';
       case 'Isha':
       default:
-        return '#34f8ff'; 
+        return '#000000'; 
     }
   }
 
@@ -161,19 +161,19 @@ export class AppComponent implements OnInit, OnDestroy {
     let message: string;
     switch (this.currentPrayer) {
       case 'Fajr':
-        message = 'Time for Fajr. May your prayer be accepted.';
+        message = 'May your prayer be accepted.';
         break;
       case 'Dhuhr':
-        message = 'It\'s Dhuhr. There is no god but Allah. Muhammad is the messenger of God.';
+        message = 'There is no god but Allah. Muhammad is the messenger of God.';
         break;
       case 'Asr':
-        message = 'Asr has begun. O Allah, send blessings upon Muhammad, the unlettered Prophet, and upon his family, and grant them best of peace.';
+        message = 'O Allah, send blessings upon Muhammad, the unlettered Prophet, and upon his family, and grant them best of peace.';
         break;
       case 'Maghrib':
-        message = 'Maghrib is here. Recite Astaghfirullah  .';
+        message = 'Recite Astaghfirullah  .';
         break;
       case 'Isha':
-        message = 'Isha. To Allah, we belong, and to him, we will return.';
+        message = 'To Allah, we belong, and to him, we will return.';
         break;
       default:
         message = 'Awaiting the next prayer.';
