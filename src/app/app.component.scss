@@ -49,6 +49,20 @@ h2 {
   font-size: clamp(0.75rem, 2vw, 1rem);
 }
 
+/* Inline prayer times under the ramadan-day area */
+.ramadan-day .ramadan-times {
+  margin-top: 0.5rem;
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.ramadan-day .prayer-time {
+  opacity: 0.95;
+  display: inline-block;
+}
+
 footer { 
   position: fixed; 
   bottom: 20px; 

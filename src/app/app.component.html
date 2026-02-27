@@ -6,18 +6,17 @@
     <div *ngIf="loading" class="loading">Loading...</div>
 
     <div class="ramadan-day" style="margin-top:0.5rem; font-size:1rem;">
-      <small *ngIf="ramadanLoading">Loading day...</small>
-      <small *ngIf="!ramadanLoading">{{ ramadanDay }}</small>
+        <small *ngIf="ramadanLoading">Loading day...</small>
+        <small *ngIf="!ramadanLoading">{{ ramadanDay }}</small>
+        <div *ngIf="timings" class="ramadan-times">
+          <small class="prayer-time">Fajr: {{ timings.Fajr }}</small>
+          <small class="prayer-time">Dhuhr: {{ timings.Dhuhr }}</small>
+          <small class="prayer-time">Asr: {{ timings.Asr }}</small>
+          <small class="prayer-time">Maghrib: {{ timings.Maghrib }}</small>
+          <small class="prayer-time">Isha: {{ timings.Isha }}</small>
+        </div>
     </div>
   </div>
-</div>
 
-<footer *ngIf="!loading && timings">
-  <div class="prayer-times">
-    <span>Fajr: {{ timings.Fajr }}</span>
-    <span>Dhuhr: {{ timings.Dhuhr }}</span>
-    <span>Asr: {{ timings.Asr }}</span>
-    <span>Maghrib: {{ timings.Maghrib }}</span>
-    <span>Isha: {{ timings.Isha }}</span>
-  </div>
+  <!-- footer removed: prayer times are now shown inline under .ramadan-day -->
 </footer>
