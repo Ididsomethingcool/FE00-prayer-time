@@ -25,6 +25,7 @@ export class AppComponent implements OnInit, OnDestroy {
   ishaTime?: Date;
   timings?: Timings;
   ramadanDay?: string;
+  ramadanDayNumber?: number;
   ramadanLoading = true;
   currentPrayer = '—';
   isFasting = false;
@@ -56,6 +57,8 @@ export class AppComponent implements OnInit, OnDestroy {
       next: (d) => {
         console.log('Ramadan day received:', d);
         this.ramadanDay = d;
+        const match = d.match(/Day (\d+)/);
+        this.ramadanDayNumber = match ? parseInt(match[1]) : undefined;
         this.ramadanLoading = false;
       },
       error: (err) => {
@@ -164,13 +167,13 @@ export class AppComponent implements OnInit, OnDestroy {
         message = 'May your prayer be accepted.';
         break;
       case 'Dhuhr':
-        message = 'There is no god but Allah. Muhammad is the messenger of God.';
+        message = 'There is no god but Allah. Muhammad (SAW) is the messenger of God.';
         break;
       case 'Asr':
-        message = 'O Allah, send blessings upon Muhammad, the unlettered Prophet, and upon his family, and grant them best of peace.';
+        message = 'O Allah, send blessings upon Muhammad (SAW), the unlettered Prophet, and upon his family, and grant them best of peace.';
         break;
       case 'Maghrib':
-        message = 'Recite Astaghfirullah  .';
+        message = 'Recite Astaghfirullah three times after prayer to seek forgiveness.';
         break;
       case 'Isha':
         message = 'To Allah, we belong, and to him, we will return.';
@@ -181,5 +184,9 @@ export class AppComponent implements OnInit, OnDestroy {
 
     // always include a note about the current prayer
     return `${message} — current prayer: ${this.currentPrayer}`;
+  }
+
+  getRamadanDay(): number | undefined {
+    return this.ramadanDayNumber;
   }
 }

@@ -7,7 +7,7 @@
 
     <div class="ramadan-day" style="margin-top:0.5rem; font-size:1rem;">
         <small *ngIf="ramadanLoading">Loading day...</small>
-        <small *ngIf="!ramadanLoading">{{ ramadanDay }}</small>
+        <small *ngIf="!ramadanLoading && getRamadanDay()">{{ getRamadanDay() }}/30</small>
         <div *ngIf="timings" class="ramadan-times">
           <small class="prayer-time">Fajr: {{ timings.Fajr }}</small>
           <small class="prayer-time">Dhuhr: {{ timings.Dhuhr }}</small>
